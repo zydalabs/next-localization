@@ -1,6 +1,6 @@
 {
   "name": "@zyda/next-localization",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Localization for Next.js",
   "keywords": [
