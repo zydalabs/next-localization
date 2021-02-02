@@ -11,7 +11,7 @@ export const buildPageTranslateFunction: BuildPageTranslateFunction =
     }
 
     // Assume the matched value is a template, and try to substitute its params
-    const template = dictionary[value];
+    const template: string = value.split('.').reduce<any>((dict, key) => dict[key], dictionary);
 
     if (isNil(template)) {
       throw new Error(`Value [${value}] was not found in dictionary or in custom translations`);
