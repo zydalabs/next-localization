@@ -30,6 +30,7 @@
     "@types/ramda": "^0.27.36",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@zyda/swr-internal-state": "^1.0.0",
     "ramda": "^0.27.1"
   },
   "devDependencies": {
