@@ -8,5 +8,5 @@ export const useLocalization = (customTranslations: CustomTranslation[] = []) =>
 
   const t = buildPageTranslateFunction(dictionary!, language!, customTranslations);
 
-  return { t, language };
+  return { t, lang: language };
 }
