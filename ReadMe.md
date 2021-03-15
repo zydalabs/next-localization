@@ -3,7 +3,10 @@ This package exposes a higher order component that wraps [Next](https://nextjs.o
 
 This package is optimized to work with serverless next build (on vercel or netlify or lambda function or whatever platform). Other alternatives such as i18n would be more optimized for usage with server-based next application, but we found they do not work properly with serverless build.
 
-## How it works
+## API
+This package `withNextLocalization` (explained below) higher order component as a default export. It also exports `useLocalization` hook as a named export.
+
+### withNextLocalization
 As stated above, the localization is done through a Higher Order Component (HOC) that wraps the entire Next page and provides it with a translation function as a prop. That HOC accepts 5 parameters and they are as follows:
 1. `settings` object.
 1. `buildDictionary` Function.
@@ -42,3 +45,9 @@ const MyPage = ({ t: Translate, lang: string, /* some other props from Next */ }
 
 export withLocalization(MyPage);
 ```
+
+### useLocalization
+This is custom hook that returns an object of `{ t: (string) => string, lang: string }` which are the same props that get passed to the localized page.
+
+The hook accepts one optional argument:
+  - `customTranslation`: The same object that is passed to the localization HOC, defaults to empty array.
