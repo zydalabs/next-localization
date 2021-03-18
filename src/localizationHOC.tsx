@@ -5,7 +5,7 @@ import { AppContext } from 'next/app';
 
 import { WithNextLocalization, WrapperPageProps } from './types';
 import { buildPageTranslateFunction } from './helpers';
-import { useDictionary, useLanguage } from './hooks';
+import { useLanguage, useTranslate } from './hooks';
 
 /**
 * @param settings
@@ -30,15 +30,16 @@ const HOC: WithNextLocalization<Function & { getInitialProps?: Function }> = (
   const OldPage = page.bind({});
 
   const NewPage: typeof page = ({ dictionary, language, ...otherProps }: WrapperPageProps) => {
-    // Save the created dictionary
-    const [, setDictionaryState] = useDictionary();
-    setDictionaryState(dictionary);
-
     // Save current language
     const [, setLanguageState] = useLanguage();
     setLanguageState(language);
 
     const translate = buildPageTranslateFunction(dictionary, language, customTranslations);
+
+    // Save translate function to state
+    const [, setTranslateState] = useTranslate();
+    setTranslateState(translate);
+
     return (<OldPage t={translate} lang={language} {...otherProps} />);
   };
 

@@ -1,12 +1,9 @@
-import { buildPageTranslateFunction } from "../helpers";
-import { CustomTranslation } from "../types";
-import { useDictionary, useLanguage } from "./states"
+import { Translate } from '../types';
+import { useLanguage, useTranslate } from './states';
 
-export const useLocalization = (customTranslations: CustomTranslation[] = []) => {
-  const [dictionary] = useDictionary();
+export const useLocalization = (): { t: Translate, lang: string } => {
+  const [translate] = useTranslate();
   const [language] = useLanguage();
 
-  const t = buildPageTranslateFunction(dictionary!, language!, customTranslations);
-
-  return { t, lang: language };
+  return { t: translate!, lang: language! };
 }
