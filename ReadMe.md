@@ -3,6 +3,17 @@ This package exposes a higher order component that wraps [Next](https://nextjs.o
 
 This package is optimized to work with serverless next build (on vercel or netlify or lambda function or whatever platform). Other alternatives such as i18n would be more optimized for usage with server-based next application, but we found they do not work properly with serverless build.
 
+## Installation
+Install with npm...
+```bash
+npm i @zyda/next-localization
+```
+
+Or with yarn...
+```bash
+yarn add @zyda/next-localization
+```
+
 ## API
 This package `withNextLocalization` (explained below) higher order component as a default export. It also exports `useLocalization` hook as a named export.
 
