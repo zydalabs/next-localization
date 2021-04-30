@@ -1,6 +1,6 @@
 {
   "name": "@zyda/next-localization",
-  "version": "0.1.3",
+  "version": "0.3.0",
   "private": false,
   "description": "Localization for Next.js",
   "keywords": [
@@ -30,6 +30,7 @@
     "@types/ramda": "^0.27.36",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@zyda/swr-internal-state": "^1.0.0",
     "ramda": "^0.27.1"
   },
   "devDependencies": {
