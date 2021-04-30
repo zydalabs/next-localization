@@ -1,6 +1,6 @@
 {
   "name": "@zyda/next-localization",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "description": "Localization for Next.js",
   "keywords": [
@@ -23,7 +23,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "type:check": "tsc --noEmit"
+    "type:check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@types/next": "^9.0.0",
