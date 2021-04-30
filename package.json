@@ -24,7 +24,7 @@
     "build": "tsc",
     "test": "jest",
     "type:check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@types/next": "^9.0.0",
